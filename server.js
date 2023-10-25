@@ -15,7 +15,7 @@ server.use(cors());
 
 mongoose
   .connect(
-    `mongodb+srv://${envUserName}:${envPassWord}@cluster0.5c1b7a1.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://${envUserName}:${envPassWord}@mainnikedb.jx4pwkk.mongodb.net/nikeDbServer`
   )
   .then(() => console.log("mongodb connected"))
   .catch((error) => {
