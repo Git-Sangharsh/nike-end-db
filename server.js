@@ -9,10 +9,6 @@ dotenvConfig(); // Loading environment variables from the .env file
 const envUserName = process.env.MONGODB_USERNAME;
 const envPassWord = process.env.MONGODB_PASSWORD;
 
-const apiUrl = "https://nike-frontend69.onrender.com"; // The new domain of your React app
-const signInEndPoint = "/signin";
-const signUpEndPoint = "/signup";
-
 const server = express();
 server.use(bodyParser.json());
 server.use(cors());
@@ -77,7 +73,7 @@ server.get("/", (req, res) => {
   res.send("<h1>welcome to backend of nike</h1>");
 });
 
-server.post(apiUrl + signUpEndPoint, async (req, res) => {
+server.post("/signin", async (req, res) => {
   const { username, password } = req.body;
 
   // Checking if the user exists in the register collection
@@ -104,7 +100,7 @@ server.post(apiUrl + signUpEndPoint, async (req, res) => {
   }
 });
 
-server.post(apiUrl + signUpEndPoint, async (req, res) => {
+server.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
